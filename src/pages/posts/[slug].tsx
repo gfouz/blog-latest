@@ -1,6 +1,8 @@
+//@ts-nocheck
 import fs from "fs";
 import matter from "gray-matter";
 import md from 'markdown-it';
+import Image from 'next/image';
 
 // The page for each post
 export default function Post({frontmatter, content}) {
@@ -15,7 +17,7 @@ export default function Post({frontmatter, content}) {
     </main>
 }
 
-// Generating the paths for each post
+
 export async function getStaticPaths() {
   // Get list of all files from our posts directory
   const files = fs.readdirSync("src/posts");

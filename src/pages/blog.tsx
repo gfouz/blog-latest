@@ -1,12 +1,22 @@
+//@ts-nocheck
 import fs from 'fs';
 import matter from 'gray-matter';
 import Image from 'next/image';
 import Link from 'next/link';
 
+type Tpost = {
+    slug: any; 
+    frontmatter: any;
+};
+
+interface IProps {
+  posts: Tpost[], 
+}
+
 // The Blog Page Content
-export default function Blog({posts}){
+export default function Blog({posts}: IProps){
     return <main>
-        {posts.map(post => {
+        {posts.map( post => {
             //extract slug and frontmatter
             const {slug, frontmatter} = post
             //extract frontmatter properties
