@@ -1,8 +1,8 @@
-//@ts-nocheck
 import fs from 'fs';
 import matter from 'gray-matter';
 import Image from 'next/image';
 import Link from 'next/link';
+import styled from 'styled-components';
 
 type Tpost = {
     slug: any; 
@@ -15,7 +15,7 @@ interface IProps {
 
 // The Blog Page Content
 export default function Blog({posts}: IProps){
-    return <main>
+    return <>
         {posts.map( post => {
             //extract slug and frontmatter
             const {slug, frontmatter} = post
@@ -23,17 +23,35 @@ export default function Blog({posts}: IProps){
             const {title, author, category, date, bannerImage, tags} = frontmatter
 
             //JSX for individual blog listing
-            return <article key={title}>
+            return <BlogMain key={title}>
+                <Headline>Post title:</Headline>
                 <Link href={`/posts/${slug}`}>
-                    <h1>{title}</h1>
+                    <LinkLabel>{title}</LinkLabel>
                 </Link>
                 <h3>{author}</h3>
                 <h3>{date}</h3>
-            </article>
+            </BlogMain>
         })}
-    </main>
+    </>
 }
 
+const BlogMain = styled.div`
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ border-radius: 10px;
+ border: 1px solid #999999;
+ width: 320px;
+ margin: 1em 0;
+`;
+const Headline = styled.h1`
+  color: #ff0000;
+`;
+
+const LinkLabel = styled(Headline)`
+  color: blue;
+`;
 
 //Generating the Static Props for the Blog Page
 export async function getStaticProps(){
