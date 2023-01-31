@@ -2,7 +2,7 @@
 title: Reactivity
 author: Giovani Fouz Jiménez
 description: Que es la reactividad y porque es tan importante...
-img: me.jpg
+img: reactive.jpg
 date: febraury 5, 2022
 ---
 
