@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
-  assetPrefix: './',
+  assetPrefix: '/next-blog-2023',
   compiler: {
     styledComponents: true,
   }
