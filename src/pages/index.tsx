@@ -66,7 +66,7 @@ const BlogItem = styled.div`
 const Headline = styled.h4`
   color: #f1f1f1;
 `;
-const BlogImage = styled.img.attrs({ src: '/images/blog.jpg', alt: 'blog'})`
+const BlogImage = styled.img.attrs({ src: './images/blog.jpg' , alt: 'blog'})`
   max-width: 100%;
   height: auto;
 `;
