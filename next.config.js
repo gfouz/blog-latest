@@ -5,6 +5,9 @@ const debug = process.env.NODE_ENV !== 'production'
 
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    path: "/",
+  },
   compiler: {
     styledComponents: true,
   }
