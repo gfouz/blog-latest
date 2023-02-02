@@ -7,14 +7,15 @@ import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 
+import sidebarPicture from '../../../public/images/gfouz.jpg';
 import { attached_1, attached_2 } from 'constants/constants';
 
 
 
 // The page for each post
 export default function Post({ frontmatter, content }) {
-  const { title, author, category, date,img, tags } = frontmatter;
-
+  const { title, author, category, date, img, tags } = frontmatter; 
+  
   return (
     <PostLayout>
       <PostHeader>
@@ -26,7 +27,9 @@ export default function Post({ frontmatter, content }) {
        <BlueHeadline>
           {date}
         </BlueHeadline>
-        <img src={`/images/${img}`} alt='typescript' />
+        
+        <PostMainPicture src={ `/next-blog-2023/images/${img}`} alt='postspictures' />
+
         <ReactMarkdown>{content}</ReactMarkdown>
 
       </PostContent>
@@ -110,6 +113,10 @@ const PostContent = styled.article`
   }
   
 `;
+const PostMainPicture = styled.img`
+ max-width: 100%;
+ height: auto;
+`;
 const PostSidebar = styled.aside`
   grid-area: aside;
   padding: 1em 0;
@@ -120,7 +127,7 @@ const PostSidebar = styled.aside`
     margin: 0.4em;
   }
 ;`
-const SidebarImage = styled.img.attrs({ src: '/images/gfouz.jpg', alt: 'gfouz'})`
+const SidebarImage = styled.img.attrs({ src: '/next-blog-2023/images/gfouz.jpg', alt: 'gfouz'})`
   width: 200px;
   height: 200px;
   object-fit: contain;
