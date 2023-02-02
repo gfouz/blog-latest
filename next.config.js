@@ -2,8 +2,6 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  basePath: '/next-blog-2023',
-  assetPrefix: '/next-blog-2023',
   compiler: {
     styledComponents: true,
   }
