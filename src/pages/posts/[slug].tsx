@@ -28,7 +28,7 @@ export default function Post({ frontmatter, content }) {
           {date}
         </BlueHeadline>
         
-        <PostMainPicture src={ `/next-blog-2023/images/${img}`} alt='postspictures' />
+        <PostMainPicture src={ `/images/${img}`} alt='postspictures' />
 
         <ReactMarkdown>{content}</ReactMarkdown>
 
@@ -127,7 +127,7 @@ const PostSidebar = styled.aside`
     margin: 0.4em;
   }
 ;`
-const SidebarImage = styled.img.attrs({ src: '/next-blog-2023/images/gfouz.jpg', alt: 'gfouz'})`
+const SidebarImage = styled.img.attrs({ src: '/images/gfouz.jpg', alt: 'gfouz'})`
   width: 200px;
   height: 200px;
   object-fit: contain;
