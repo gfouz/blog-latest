@@ -7,7 +7,6 @@ import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 
-import sidebarPicture from '../../../public/images/gfouz.jpg';
 import { attached_1, attached_2 } from 'constants/constants';
 
 
