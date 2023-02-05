@@ -98,18 +98,48 @@ const PostContent = styled.article`
     max-width: 100%;
     height: auto;
   }
-  pre {
-    padding: 1em;
-    text-align: left;
-    white-space: pre-wrap;
-    word-break: break-all;
-    word-wrap: break-word;
-    background-color: #444444;
+
+  code, pre {  
+   display: block;
+   & {
+   @media (max-width: 900px) {
+    max-width: 400px;
   }
-  code {
-    white-space: wrap;
-    word-break: break-all;
-  }
+ }
+  color: #c5c8c6;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: break-all;
+  line-height: 1.5;
+  overflow: auto;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre {
+  
+  padding: 1em;
+  margin: .5em 0;
+  border-radius: 0.3em;
+  background-color: #222222;
+}
+
+/* Inline code */
+:not(pre) > code {
+  padding: .1em;
+  border-radius: .3em;
+}
   
 `;
 const PostMainPicture = styled.img.attrs({ alt:'MainPicture'})`

@@ -3,6 +3,11 @@ import matter from 'gray-matter';
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { Header } from '../components/Header'
+import { Footer } from '../components/Footer'
+import { Aside } from '../components/Aside'
+import { Main } from '../components/Main'
+import { Headline } from '../components/Headline'
 
 type Tpost = {
     slug: any; 
@@ -17,11 +22,28 @@ interface IProps {
 export default function Blog({posts}: IProps){
 
     return <BlogContainer>
-        <BlogMain>
-          <BlogImage />
-        </BlogMain>
+       <BlogHeader>
+           <Headline 
+          p='1em 0'
+          center 
+          bolder 
+          size='2em'
+          color='#ffffff'
+        >
+            Let us read a little !
+        </Headline>
+       </BlogHeader>
+
+       <BlogMain>
+        <PictureContainer>
+          <BlogMainPicture />
+        </PictureContainer>
+        
+       </BlogMain>
+       
+       <BlogAside>
         <BlogList>
-        <Headline>Posts about technologies</Headline>
+        <Headline color='#ffffff' bolder>Posts about technologies</Headline>
         {posts.map( post => {
             //extract slug and frontmatter
             const {slug, frontmatter} = post
@@ -33,28 +55,56 @@ export default function Blog({posts}: IProps){
                     <Link href={`/posts/${slug}`}>
                     <LinkLabel>{title}</LinkLabel>
                     </Link>
-                    <Headline>{date}</Headline>
+                    <Headline color='#ffffff'>{date}</Headline>
                    </BlogItem>
       
         })}
         </BlogList>
+        </BlogAside>
+        <BlogFooter>gfouz &copy;{ new Date().getFullYear() }</BlogFooter>
         </BlogContainer>
 }
 const BlogContainer = styled.div`
- display: flex;
- justify-content: center;
- min-height: 100vh;
+ display: grid;
+  grid-template-areas:
+    'header '
+    'main'
+    'aside'
+    'footer';
+  grid-template-columns: 1fr;
+
+  @media (min-width: 550px) {
+    & {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        'header  header  header'
+        'main    main    aside'
+        'footer  footer  footer';
+    }
+  }
  background-color: #1e1e1c;
 `;
-const BlogListContainer = styled.div`
- 
+const BlogHeader = styled(Header)`
+ height: 100px;
 `;
-const BlogMain = styled.div`
- 
+const BlogMain = styled(Main)`
+  display: flex;
+  justify-content: center;
+`;
+const BlogAside = styled(Aside)`
+ padding: 5em 0;
+ text-align: center;
+`;
+const BlogFooter = styled(Footer)`
+ color: #ffffff;
+ height: 100px;
+ line-height: 100px;
+ text-align: center;
 `;
 const BlogList = styled.div`
+ min-width: 100px;  
  padding: 1em;
- background-color: #000000;
+ background-color: #1e1e1c;
 `;
 const BlogItem = styled.div`
  display: flex;
@@ -63,12 +113,13 @@ const BlogItem = styled.div`
  margin: 1em 0;
  a {text-decoration: none;}
 `;
-const Headline = styled.h4`
-  color: #f1f1f1;
+
+const PictureContainer = styled.div`
+ min-width: 300px;
 `;
-const BlogImage = styled.img.attrs({ src: '/next-blog-2023/images/blog.jpg' , alt: 'blog'})`
+const BlogMainPicture = styled.img.attrs({ src: '/next-blog-2023/images/blog.jpg' , alt: 'blog'})`
   max-width: 100%;
-    height: auto;
+  height: auto;
 `;
 const LinkLabel = styled(Headline)`
   color: #ff9800;
