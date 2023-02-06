@@ -65,6 +65,7 @@ export default function Blog({posts}: IProps){
         </BlogContainer>
 }
 const BlogContainer = styled.div`
+ padding: 3em 0;
  display: grid;
   grid-template-areas:
     'header '
