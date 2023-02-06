@@ -156,13 +156,14 @@ const PostSidebar = styled.aside`
     margin: 0.4em;
   }
 ;`
-const SidebarImage = styled.img.attrs({ src: '/next-blog-2023/images/gfouz.jpg', alt: 'gfouz'})`
-  width: 200px;
-  height: 200px;
+const SidebarImage = styled.img.attrs({ src: '/next-blog-2023/images/gfouz.png', alt: 'gfouz'})`
+  width: 120px;
+  height: 120px;
+  float: left;
   object-fit: contain;
-  border-radius: 50%;
-  background-color: #304352;
-  box-shadow: 1px 1px 10px #222222;
+  position: relative;
+  left: 7px;
+  top: 5px;
 `;
 const SidebarLinks = styled.div`
  text-align: left;

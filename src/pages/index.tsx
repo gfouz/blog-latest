@@ -151,6 +151,9 @@ export async function getStaticProps(){
 }
 
 
+//npm install --save react-pdf 
+
+
 //https://gfouz.github.io/next-blog-2023
 
 /*
