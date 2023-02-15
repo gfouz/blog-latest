@@ -1,22 +1,29 @@
 //@ts-nocheck
 import fs from "fs";
-import Image from 'next/image';
 import Link from  'next/link';
 import { useEffect } from "react";
 import matter from "gray-matter";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown  from "react-markdown";
+import { useRouter } from 'next/router'
 import styled from "styled-components";
 
+import { CloseButton } from '../../components/CloseButton';
+import { Headline } from '../../components/Headline'
 import { attached_1, attached_2 } from 'constants/constants';
 
 
 
 // The page for each post
-export default function Post({ frontmatter, content }) {
+export default function Post({ frontmatter, content, posts }) {
+  
   const { title, author, category, date, img, tags } = frontmatter; 
+  const router = useRouter();
   
   return (
     <PostLayout>
+      <CloseButton onClick={ () => router.push('/')} >
+        x
+      </CloseButton>
       <PostHeader>
         GFOUZ BLOG
       </PostHeader>
@@ -33,11 +40,37 @@ export default function Post({ frontmatter, content }) {
 
       </PostContent>
       <PostSidebar>
+        <BlogList>
+        <Headline color='#ffffff'>Posts about technologies</Headline>
+        {posts.map( post => {
+            //extract slug and frontmatter
+            const {slug, frontmatter} = post
+            //extract frontmatter properties
+            const {title, author, category, date, bannerImage, tags} = frontmatter
+
+            //JSX for individual blog listing
+            return <BlogItem key={title}>
+                    <Link href={`/posts/${slug}`}>
+                    <LinkLabel>{title}</LinkLabel>
+                    </Link>
+                    <Headline color='#ffffff'>{date}</Headline>
+                   </BlogItem>
+      
+        })}
+        
+        </BlogList>
+        <Headline center p='2em 0 0 0' color='#666666' upper bolder>
+           About me
+        </Headline>
+        <PostSidebarAbout>
         <SidebarImage />
         <Paragraph>{ attached_1 }</Paragraph>
         <Paragraph>{ attached_2 }</Paragraph>
+        </PostSidebarAbout>
         <SidebarLinks>
-        <Link href='https://github.com/gfouz'>Github Projects</Link>
+        <Link href='https://github.com/gfouz'>
+          <Headline color="blue">Github Projects</Headline>
+        </Link>
         </SidebarLinks>
         </PostSidebar>
       <PostFooter>
@@ -148,14 +181,30 @@ const PostMainPicture = styled.img.attrs({ alt:'MainPicture'})`
 `;
 const PostSidebar = styled.aside`
   grid-area: aside;
-  padding: 1em 0;
   text-align: center;
-  background-color: #999999;
-  p, a {
+  p{
     text-align: left;
     margin: 0.4em;
   }
 ;`
+const PostSidebarAbout = styled.div`
+
+`;
+const BlogList = styled.div`
+ min-width: 100px;  
+ padding: 1em;
+ background-color: #1e1e1c;
+`;
+const BlogItem = styled.div`
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ margin: 1em 0;
+ a {text-decoration: none;}
+`;
+const LinkLabel = styled(Headline)`
+  color: #ff9800;
+`;
 const SidebarImage = styled.img.attrs({ src: '/next-blog-2023/images/gfouz.png', alt: 'gfouz'})`
   width: 120px;
   height: 120px;
@@ -182,9 +231,6 @@ const PostFooter = styled.footer`
   grid-area: footer;
   color: #f1f1f1;
   background-color: #555555;
-`;
-const Headline = styled.div`
-  display: flex;
 `;
 const BlueHeadline = styled(Headline)`
   color: blue;
@@ -216,12 +262,28 @@ export async function getStaticPaths() {
 
 // Generate the static props for the page
 export async function getStaticProps({ params: { slug } }) {
+
   const fileName = fs.readFileSync(`src/posts/${slug}.md`, "utf-8");
   const { data: frontmatter, content } = matter(fileName);
+  const files = fs.readdirSync('src/posts');
+
+    // get frontmatter & slug from each post
+    const posts = files.map((fileName) => {
+        const slug = fileName.replace('.md', '');
+        const readFile = fs.readFileSync(`src/posts/${fileName}`, 'utf-8');
+        const { data: frontmatter } = matter(readFile);
+
+        return {
+          slug,
+          frontmatter,
+        };
+    });
   return {
     props: {
       frontmatter,
       content,
+      posts,
     },
   };
 }
+

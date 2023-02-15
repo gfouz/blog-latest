@@ -3,6 +3,7 @@ import matter from 'gray-matter';
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
+
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Aside } from '../components/Aside'
@@ -164,3 +165,4 @@ module.exports = {
   assetPrefix: !debug ? '/next-gh-pages/' : '',
 }
 */
+
