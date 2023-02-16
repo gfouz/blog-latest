@@ -41,11 +41,9 @@ export default function Post({ frontmatter, content, posts }) {
       </PostContent>
       <PostSidebar>
         <BlogList>
-        <Headline color='#ffffff'>Posts about technologies</Headline>
+        <Headline color='#222222'>Posts about technologies</Headline>
         {posts.map( post => {
-            //extract slug and frontmatter
             const {slug, frontmatter} = post
-            //extract frontmatter properties
             const {title, author, category, date, bannerImage, tags} = frontmatter
 
             //JSX for individual blog listing
@@ -53,7 +51,7 @@ export default function Post({ frontmatter, content, posts }) {
                     <Link href={`/posts/${slug}`}>
                     <LinkLabel>{title}</LinkLabel>
                     </Link>
-                    <Headline color='#ffffff'>{date}</Headline>
+                    <Headline color='#222222'>{date}</Headline>
                    </BlogItem>
       
         })}
@@ -69,7 +67,9 @@ export default function Post({ frontmatter, content, posts }) {
         </PostSidebarAbout>
         <SidebarLinks>
         <Link href='https://github.com/gfouz'>
-          <Headline color="blue">Github Projects</Headline>
+          <Headline color='#135a91' center bolder>
+             Github Projects
+          </Headline>
         </Link>
         </SidebarLinks>
         </PostSidebar>
@@ -116,7 +116,7 @@ const PostContent = styled.article`
   display: flex;
   flex-direction: column;
   color: #222222;
-  background-color: #f5f5f5;
+  box-shadow: 1px 1px 10px #222222;
   h3 {
     text-align: left;
     color: #1769aa;
@@ -132,13 +132,17 @@ const PostContent = styled.article`
     height: auto;
   }
 
-  code, pre {  
+  pre, code {  
    display: block;
    & {
    @media (max-width: 900px) {
     max-width: 400px;
   }
  }
+ code, pre {
+  overflow: auto;
+ }
+
   color: #c5c8c6;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
@@ -182,6 +186,7 @@ const PostMainPicture = styled.img.attrs({ alt:'MainPicture'})`
 const PostSidebar = styled.aside`
   grid-area: aside;
   text-align: center;
+  background-color: #e1e4e5;
   p{
     text-align: left;
     margin: 0.4em;
@@ -193,7 +198,6 @@ const PostSidebarAbout = styled.div`
 const BlogList = styled.div`
  min-width: 100px;  
  padding: 1em;
- background-color: #1e1e1c;
 `;
 const BlogItem = styled.div`
  display: flex;
@@ -203,7 +207,8 @@ const BlogItem = styled.div`
  a {text-decoration: none;}
 `;
 const LinkLabel = styled(Headline)`
-  color: #ff9800;
+  font-weight: bolder;
+  color: #135a91;
 `;
 const SidebarImage = styled.img.attrs({ src: '/next-blog-2023/images/gfouz.png', alt: 'gfouz'})`
   width: 120px;
@@ -219,6 +224,7 @@ const SidebarLinks = styled.div`
  a { 
    color: #000000;
    font-weight: bolder;
+   text-decoration: none;
  }
 `;
 const Paragraph = styled.p`
