@@ -1,0 +1,54 @@
+---
+title: What are http cookies?
+author: Giovani Fouz Jiménez
+description: What are cookies and...
+src: /images/cookies.jpg
+alt: cookies
+date: August 17, 2023
+---
+
+## HTTP Cookies
+
+An HTTP Cookie is a small, client-side dataset that contains information sent by the server. Also known as a web cookie, browser cookie, or internet cookie, it can be used to identify a client and acts as a way to maintain information about the client’s state in an otherwise stateless system.
+
+## Usage
+
+When the client stores data associated with a cookie, it is typically in a small file. The data is sent back to the server to identify the client, and can normally be relied upon to indicate that subsequent HTTP requests are coming from the same browser.
+
+A cookie is generally used for three things:
+
+Tracking cookies are used to build and maintain a browsing history for a client on a particular browser.
+
+Authentication cookies can be used to keep state-related information about a user that is currently logged in to the server. This type of cookie stores information about the user's account that can be used to continue a session. Without it, the user will have to re-authenticate each time a HTTP request is made.
+
+Preferences can be stored for the benefit of improving the user’s experience. For example, having a light or dark mode for a web page is user-specified customization that can persist between HTTP sessions.
+
+## Creation and storage
+
+When a server receives an HTTP request, it can optionally return the Set-Cookie response header field to instruct the browser to store the data. Multiple Set-Cookie headers can be used to store more than one piece of data using only one response.
+
+Cookies can also include certain prefixes and attributes that further specify how they can be used and how long they last. For example, a cookie can include details on which domains can receive it, as well as an expiry date that specifies a time after which it is expected to no longer be sent.
+
+## Persistence
+
+The data in a cookie is generally persistent and the lifetime can be specified by the server. A session cookie is deleted when the HTTP session is completed, and this is governed by the client’s browser. The server can also ask the client to create a permanent cookie, which includes the Expires attribute as part of the response to inform the client as to when the cookie data is expected to no longer be sent.
+
+Note
+
+Expiry dates are relative to the client, as opposed to the server.
+
+The Max-Age attribute is another way for the server to time-limit a cookie. The value is the number of seconds until the cookie expires. If both Expires and Max-Age attributes are set then the Expires is ignored and the Max-Age dictates the expiry date. If neither one is set then the cookie is not persistent and will expire as soon as the current HTTP session ends.
+
+Note
+
+Browsers may choose to cap the maximum value for the max-age attribute to 400 days. This is close to 13 months, allowing for sites visited roughly once a year by users to keep working, e.g. reporting the yearly utilities usage through the utility-company's website.
+
+While permanent cookies can be available for quite some time, internet browsers offer functionality for clearing cookies from the system. Also, browsers generally have options like Google Chrome’s Incognito Mode, which does not store information related to a user’s HTTP session, including maintaining cookies after the HTTP session is completed.
+
+## Drawbacks
+
+One disadvantage to using cookies is that they are sent with every HTTP request, meaning that duplicate data is regularly and repeatedly sent. This consumes additional bandwidth and depending on the nature of the cookie, unnecessarily so. This is compounded by sites that use several different cookies during a HTTP session.
+
+## Takeaway
+
+HTTP Cookies are a mechanism that servers have for storing data on a client, typically used to identify them during subsequent HTTP requests. This allows for the concept of maintaining a state in an otherwise stateless environment. Different attributes are used to keep cookies secure, including options to prevent them from being sent to different domains and having them expire. Popular uses for cookies are in web-tracking applications and as such, a variety of regulations exist to restrict their use.

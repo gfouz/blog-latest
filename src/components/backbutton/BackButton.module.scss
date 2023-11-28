@@ -1,0 +1,30 @@
+@use '../../scss/styles.scss' as *;
+@use '../../scss/abstracts/variables' as *;
+
+.buttonContainer {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background-color: #444444;
+}
+.topButton {
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 0.7rem;
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: #ffffff;
+  background-color: #444444;
+}
+.topButton:hover {
+  color: #222222;
+  background-color: #87c742;
+}
+.backbutton {
+  @extend .topButton;
+}

@@ -1,0 +1,171 @@
+---
+title: Escriba código legible.
+author: Giovani Fouz Jiménez
+description: recomendaciones para código más limpio...
+src: /images/clean-code.jpg
+alt: clean-code
+date: October 25, 2023
+---
+
+## Recomendacones para escribir mejor código.
+
+## 1-Utilice la desestructuración de objetos
+
+La desestructuración de objetos le permite extraer datos de objetos en distintas variables. Esto puede hacer que su código sea más limpio al evitar el uso repetitivo de la notación de puntos.
+
+Por ejemplo:
+
+```jsx
+const user = {
+  name: 'John',
+  age: 30,
+};
+
+// Without destructuring
+const name = user.name;
+const age = user.age;
+
+// With destructuring
+const { name, age } = user;
+```
+
+## 2-Utilice parámetros predeterminados
+
+Los parámetros predeterminados le permiten establecer valores predeterminados para los parámetros de función si no se proporciona ninguno. Esto evita repetirse redefiniendo valores cada vez.
+
+Por ejemplo:
+
+```jsx
+function greet(name = 'Stranger') {
+  console.log('Hello ' + name);
+}
+
+greet(); // Hello Stranger
+greet('John'); // Hello John
+```
+
+Establecer valores predeterminados hace que el uso de las funciones sea más flexible.
+
+## 3-Utilice literales de plantilla
+
+Los literales de plantilla hacen que la concatenación de cadenas sea más limpia usando comillas invertidas y ${expression} en lugar de signos más. ¡Incluso un niño podría ver que esta es una manera más fácil de construir cuerdas!
+
+Por ejemplo:
+
+```js
+const name = 'John';
+const age = 30;
+
+// Without template literals
+const greeting = 'Hello ' + name + ', you are ' + age;
+
+// With template literals
+const greeting = `Hello ${name}, you are ${age}`;
+```
+
+## 4-Utilice la desestructuración de matrices
+
+La desestructuración de matrices funciona de manera similar a la desestructuración de objetos, lo que le permite extraer elementos de una matriz en variables.
+
+Por ejemplo:
+
+```js
+const fruits = ['apples', 'oranges', 'bananas'];
+
+// Without destructuring
+const fruit1 = fruits[0];
+const fruit2 = fruits[1];
+
+// With destructuring
+const [fruit1, fruit2] = fruits;
+```
+
+## 5-Utilice métodos de matriz
+
+JavaScript tiene métodos de matriz útiles para ayudarnos a escribir código más limpio. Cosas como map(), filter(), find(), reduce(), etc. pueden evitar muchos bucles y hacer que el código sea más expresivo.
+
+Por ejemplo:
+
+```js
+// Filter out all even numbers
+const evenNumbers = numbers.filter((num) => num % 2 === 0);
+
+// Extract names from objects
+const names = users.map((user) => user.name);
+```
+
+## 6-Utilice operador ternario
+
+El operador ternario le permite escribir declaraciones if/else de una línea de una manera más sencilla.
+
+```js
+Por ejemplo:
+// Without ternary
+let message;
+if(isLoggedIn) {
+  message = 'Welcome back!';
+} else {
+  message = 'Please log in';
+}
+```
+
+## 7-Utilice métodos de objetos
+
+JavaScript proporciona a los objetos métodos integrados como Object.keys(), Object.values(), JSON.stringify(), etc. Su uso evita la reimplementación de tareas repetitivas.
+
+```js
+// Get object keys
+const keys = Object.keys(user);
+
+// Convert object to JSON
+const json = JSON.stringify(user);
+Los métodos de objetos integrados ayudan a mantener el código ordenado y reutilizable.
+// With ternary
+const message = isLoggedIn ? 'Welcome back!' : 'Please log in';
+```
+
+## 8-Utilice propiedades de descanso/propagación
+
+La sintaxis rest/spread nos permite manejar parámetros de funciones y elementos de matriz de manera flexible.
+
+Por ejemplo:
+
+```js
+// Rest parameters
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b);
+}
+
+// Spread syntax
+const newArray = [...array, 'new item'];
+```
+
+Incluso los más jóvenes pueden comprender estos conceptos que añaden poder a JS.
+
+## 9-Utilice Let y Const
+
+El uso de let y const evita comportamientos no deseados por parte de var. Se aseguran de que las variables tengan un alcance de bloque y que las constantes no se puedan reasignar.
+
+Por ejemplo:
+
+```js
+// var is function scoped
+if (true) {
+  var snack = 'chips';
+}
+console.log(snack); // chips
+
+// let and const are block scoped
+if (true) {
+  let fruit = 'apples';
+  const color = 'red';
+}
+// fruit not defined here
+```
+
+Let y const ayudan a los principiantes a recordar las mejores prácticas.
+
+En conclusión
+Estos son solo algunos de los mejores trucos de JavaScript que pueden ayudarte a escribir código más limpio y elegante. Incluso los programadores principiantes pueden comprender estos conceptos para aprovechar al máximo JavaScript.
+
+[Leer más, sitio oficial de NextJs](https://nextjs.org/docs/getting-started/react-essentials)

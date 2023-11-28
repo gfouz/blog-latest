@@ -1,0 +1,20 @@
+@use '../../scss/abstracts/variables' as *;
+
+.postlist {
+  text-align: left;
+}
+.post_item {
+  list-style-type: none;
+}
+.post_link {
+  color: green;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-decoration: none;
+}
+.current_postlink {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: $danger;
+  text-decoration: none;
+}

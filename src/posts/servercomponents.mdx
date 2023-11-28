@@ -1,0 +1,33 @@
+---
+title: Componentes del servidor.
+author: Giovani Fouz Jiménez
+description: Los componentes de servidor de React son ...
+src: /images/server-components.jpg
+alt: book
+date: August 1, 2023
+---
+
+## ¿Qué son los componentes del servidor en react?
+
+Next.js 13.4 ha introducido una característica completamente nueva llamada React Server Components. Esta función permite a los desarrolladores escribir lógica compleja del lado del servidor directamente en sus componentes de React, lo que les brinda más control y flexibilidad sobre la representación del lado del servidor.
+
+En esta publicación de blog, exploraremos qué son los componentes del servidor React, cómo funcionan y cómo usarlos en sus aplicaciones Next.js.
+
+Los componentes de servidor de React son una característica nueva en Next.js 13.4 que permite a los desarrolladores escribir código del lado del servidor directamente en sus componentes de React. Son una extensión de la función de componentes de servidor existente en Next.js, pero con beneficios y mejoras adicionales.
+
+Con React Server Components, los desarrolladores pueden escribir lógica compleja del lado del servidor, como consultas de bases de datos, directamente en sus componentes. Esto les permite reducir la cantidad de datos que deben transferirse entre el cliente y el servidor, lo que da como resultado un rendimiento mejorado y tiempos de carga más rápidos.
+
+¿Cómo funcionan los componentes del servidor React?
+Los componentes de servidor de React funcionan al permitir que los desarrolladores definan la lógica del lado del servidor directamente en sus componentes de React. Luego, esta lógica se ejecuta en el lado del servidor durante la representación del lado del servidor, lo que reduce la cantidad de datos que deben transferirse al cliente.
+
+[Leer más, sitio oficial de NextJs](https://nextjs.org/docs/getting-started/react-essentials)
+
+## ¿Cómo uso los componentes del servidor?
+
+Con Next.js 13.4, el componente predeterminado en App Router será un componente de servidor. Los componentes en el directorio de páginas todavía se comportan de la manera anterior.
+
+Básicamente, lo que esto nos permite hacer es agregar código que normalmente se ejecuta en el servidor en un componente de reacción. Este componente se procesa en el servidor y solo el HTML se devuelve al usuario.
+
+## ¿Cuándo usar los componentes de cliente?
+
+En términos generales, desea utilizar los componentes del cliente siempre que desee tener algún tipo de interactividad con el usuario. Por ejemplo, cuando desea tener un botón que active una determinada acción, debe elegir un componente de cliente.

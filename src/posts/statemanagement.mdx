@@ -1,0 +1,129 @@
+---
+title: What is Zustand?
+author: Giovani Fouz Jiménez
+description: Zustand a library for react state...
+src: /images/office.png
+alt: zustand
+date: August 2, 2023
+---
+
+## What is Zustand?
+
+[Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction) was created and is maintained by the creators of react-spring, react-three-fiber, and many other awesome tools, Poimandres. At 1.5kB, it’s probably the smallest library of all—you can read through the source code in a matter of minutes.
+
+To manage state in modern frontend frameworks, Redux has always been king. But now, many new competitors are entering the fray with new ideas, desperate to overthrow Redux with the promise of ease-of-use and simplicity.
+
+## Getting started with Zustand
+
+Zustand is known for its simplicity. On the (really beautiful) website they created for their package, you can see a very simple example written in just four lines of code that creates a globally available state:
+
+```jsx
+import create from 'zustand';
+
+const useCountStore = create((set) => ({
+  count: 0,
+  increaseCount: () => set((state) => ({ count: state.count + 1 })),
+  resetCount: () => set({ count: 0 }),
+}));
+```
+
+The main function of the state management library is called create. It accepts a callback function as its first argument, which in turn accepts a set function that should be used when manipulating memory.
+
+The function create then returns another function, which in our case, is called useStore. As you can see from the name of the return value, it returns a Hook, so you can insert it anywhere in your React application, like so:
+
+```jsx
+import { useStore } from 'zustand';
+
+function MyComponent() {
+  const count = useStore((state) => state.count);
+
+  return <div>{count}</div>;
+}
+```
+
+Wherever this Hook is injected and the state used, the component will rerender when the state changes, making it a fully functional global state with these small lines of code.
+
+You can also extract the action, which changes the state anywhere you want from the same Hook like this:
+
+```jsx
+import { useStore } from 'zustand';
+
+function MyComponent() {
+  const count = useStore((state) => state);
+  const increaseCount = useStore((state) => state.increaseCount);
+
+  return (
+    <div>
+      {count}
+      <button onClick={increaseCount}>Click me to increase the count!</button>
+    </div>
+  );
+}
+```
+
+But, what about performing async actions or fetching something from a server that you save to your store?
+
+Well, you can make your mutation function asynchronous and Zustand will set your state when it’s ready. That way you don’t need to worry about asynchronous functions inside your component anymore:
+
+```jsx
+const useStore = create((set) => ({
+  fishies: {},
+  fetch: async (pond) => {
+    const response = await fetch(pond);
+    set({ fishies: await response.json() });
+  },
+}));
+```
+
+## Using Zustand to persist state
+
+One of the most common use cases for using a global state management tool is that you want to persist your state over the lifecycle of your website. For example, if you create a survey tool, you want to save the user’s answers and state.
+
+Now, if the user accidentally reloads your page, all the answers and the pointer would be lost. This is a common use case where you want to persist this exact state.
+
+That is, even if the user reloads the page or closes the window, the responses and state are retained and can be restored when the user visits the site again.
+
+Zustand solves this particular use case with a nice “battery-included” middleware called persist that persists your store in any way you want. The only thing you need to do to persist your state in your application’s sessionStorage is to add the following:
+
+```jsx
+import create from 'zustand';
+import { persist } from 'zustand/middleware';
+
+export const useStore = create(
+  persist(
+    (set, get) => ({
+      anwers: [],
+      addAnAnswer: (answer) =>
+        set((prevState) => ({ answers: [...prevState.answers, answer] })),
+    }),
+    {
+      name: 'answer-storage', // unique name
+      getStorage: () => sessionStorage, // (optional) by default the 'localStorage' is used
+    },
+  ),
+);
+```
+
+As you can see, the store is exactly the same as without the persistence. The only difference is that it is additionally wrapped with persist middleware. You also need to give the store a unique name to identify it in the browser.
+
+Optionally, you can also decide which persistence you want; by default, this is localStorage, but you can also choose sessionStorage if you want the state to be persistent only within the user’s session.
+
+## Is Zustand better than Redux?
+
+Redux is probably still the most widely used library when it comes to managing global states. However, libraries like Zustand try to tackle the problem of managing global states in a more pragmatic and simpler way.
+
+Let’s examine how exactly Zustand differs from Redux.
+
+### Simplicity
+
+One drawback to using Redux is the amount of code you have to write to have global state. You have to create reducers, actions, and dispatch functions just to change a very simple state.
+
+The power of Zustand is that creating a global state can be done with four lines of code. That is, if your state is simple, state can save you a lot of time.
+
+### Scope
+
+Redux, like Context, needs to be wrapped with a provider component that injects state into all components packaged with provider so that you can use that state in all packaged React components.
+
+With Zustand, this is not necessary. After you create the store, you can inject it wherever you want and once for all components in the project. But that’s probably one of the biggest advantages of state: code that’s not in React.
+
+So you can get data from your state in functions that are called without a React component. For example, using a request function before making a request to the backend.

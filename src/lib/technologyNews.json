@@ -1,0 +1,186 @@
+{
+  "response": {
+    "status": "ok",
+    "userTier": "developer",
+    "total": 56760,
+    "startIndex": 1,
+    "pageSize": 10,
+    "currentPage": 1,
+    "pages": 5676,
+    "edition": {
+      "id": "technology",
+      "webTitle": "Technology",
+      "webUrl": "https://www.theguardian.com/technology",
+      "apiUrl": "https://content.guardianapis.com/technology",
+      "code": "default"
+    },
+    "section": {
+      "id": "technology",
+      "webTitle": "Technology",
+      "webUrl": "https://www.theguardian.com/technology",
+      "apiUrl": "https://content.guardianapis.com/technology",
+      "editions": [
+        {
+          "id": "technology",
+          "webTitle": "Technology",
+          "webUrl": "https://www.theguardian.com/technology",
+          "apiUrl": "https://content.guardianapis.com/technology",
+          "code": "default"
+        },
+        {
+          "id": "au/technology",
+          "webTitle": "Technology",
+          "webUrl": "https://www.theguardian.com/au/technology",
+          "apiUrl": "https://content.guardianapis.com/au/technology",
+          "code": "au"
+        },
+        {
+          "id": "uk/technology",
+          "webTitle": "Technology",
+          "webUrl": "https://www.theguardian.com/uk/technology",
+          "apiUrl": "https://content.guardianapis.com/uk/technology",
+          "code": "uk"
+        },
+        {
+          "id": "us/technology",
+          "webTitle": "Technology",
+          "webUrl": "https://www.theguardian.com/us/technology",
+          "apiUrl": "https://content.guardianapis.com/us/technology",
+          "code": "us"
+        }
+      ]
+    },
+    "results": [
+      {
+        "id": "technology/2023/oct/27/elon-musk-x-twitter-takeover-revenue-users-advertising",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2023-10-27T05:00:37Z",
+        "webTitle": "‘Musk destroyed all that’: Twitter’s business is flailing after a year of Elon",
+        "webUrl": "https://www.theguardian.com/technology/2023/oct/27/elon-musk-x-twitter-takeover-revenue-users-advertising",
+        "apiUrl": "https://content.guardianapis.com/technology/2023/oct/27/elon-musk-x-twitter-takeover-revenue-users-advertising",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2023/oct/26/amazon-quarter-profits-revenue-increase",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2023-10-26T23:23:25Z",
+        "webTitle": "Amazon profits nearly triple as company reports $143.1bn in revenue",
+        "webUrl": "https://www.theguardian.com/technology/2023/oct/26/amazon-quarter-profits-revenue-increase",
+        "apiUrl": "https://content.guardianapis.com/technology/2023/oct/26/amazon-quarter-profits-revenue-increase",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2023/oct/26/pro-palestinian-instagram-account-locked-by-meta-for-security-reasons",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2023-10-26T14:13:05Z",
+        "webTitle": "Pro-Palestinian Instagram account locked by Meta for ‘security reasons’",
+        "webUrl": "https://www.theguardian.com/technology/2023/oct/26/pro-palestinian-instagram-account-locked-by-meta-for-security-reasons",
+        "apiUrl": "https://content.guardianapis.com/technology/2023/oct/26/pro-palestinian-instagram-account-locked-by-meta-for-security-reasons",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2023/oct/26/sunak-announces-uk-ai-safety-institute-but-declines-to-support-moratorium",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2023-10-26T12:10:18Z",
+        "webTitle": "Sunak announces UK AI safety institute but declines to support moratorium",
+        "webUrl": "https://www.theguardian.com/technology/2023/oct/26/sunak-announces-uk-ai-safety-institute-but-declines-to-support-moratorium",
+        "apiUrl": "https://content.guardianapis.com/technology/2023/oct/26/sunak-announces-uk-ai-safety-institute-but-declines-to-support-moratorium",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2023/oct/26/ai-artificial-intelligence-investment-boom",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2023-10-26T08:00:29Z",
+        "webTitle": "Humanity at risk from AI ‘race to the bottom’, says tech expert",
+        "webUrl": "https://www.theguardian.com/technology/2023/oct/26/ai-artificial-intelligence-investment-boom",
+        "apiUrl": "https://content.guardianapis.com/technology/2023/oct/26/ai-artificial-intelligence-investment-boom",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2023/oct/26/pixel-watch-2-review-google-smartwatch-speed-battery-boost",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2023-10-26T06:00:27Z",
+        "webTitle": "Pixel Watch 2 review: Google smartwatch gets speed and battery boost",
+        "webUrl": "https://www.theguardian.com/technology/2023/oct/26/pixel-watch-2-review-google-smartwatch-speed-battery-boost",
+        "apiUrl": "https://content.guardianapis.com/technology/2023/oct/26/pixel-watch-2-review-google-smartwatch-speed-battery-boost",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2023/oct/25/ai-dangers-must-be-faced-head-on-rishi-sunak-to-tell-tech-summit",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2023-10-25T23:02:53Z",
+        "webTitle": "AI dangers must be faced ‘head on’, Rishi Sunak to warn ahead of tech summit",
+        "webUrl": "https://www.theguardian.com/technology/2023/oct/25/ai-dangers-must-be-faced-head-on-rishi-sunak-to-tell-tech-summit",
+        "apiUrl": "https://content.guardianapis.com/technology/2023/oct/25/ai-dangers-must-be-faced-head-on-rishi-sunak-to-tell-tech-summit",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/2023/oct/25/meta-earnings-report-profitable-quarter-facebook",
+        "type": "article",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2023-10-25T21:12:34Z",
+        "webTitle": "Meta earnings report reveals most profitable quarter in years",
+        "webUrl": "https://www.theguardian.com/technology/2023/oct/25/meta-earnings-report-profitable-quarter-facebook",
+        "apiUrl": "https://content.guardianapis.com/technology/2023/oct/25/meta-earnings-report-profitable-quarter-facebook",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/ng-interactive/2023/oct/25/a-day-in-the-life-of-ai",
+        "type": "interactive",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2023-10-25T13:38:11Z",
+        "webTitle": "A day in the life of AI",
+        "webUrl": "https://www.theguardian.com/technology/ng-interactive/2023/oct/25/a-day-in-the-life-of-ai",
+        "apiUrl": "https://content.guardianapis.com/technology/ng-interactive/2023/oct/25/a-day-in-the-life-of-ai",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      },
+      {
+        "id": "technology/ng-interactive/2023/oct/25/my-blonde-gf-a-disturbing-story-of-deepfake-pornography",
+        "type": "interactive",
+        "sectionId": "technology",
+        "sectionName": "Technology",
+        "webPublicationDate": "2023-10-25T10:51:46Z",
+        "webTitle": "My Blonde GF: a disturbing story of deepfake pornography",
+        "webUrl": "https://www.theguardian.com/technology/ng-interactive/2023/oct/25/my-blonde-gf-a-disturbing-story-of-deepfake-pornography",
+        "apiUrl": "https://content.guardianapis.com/technology/ng-interactive/2023/oct/25/my-blonde-gf-a-disturbing-story-of-deepfake-pornography",
+        "isHosted": false,
+        "pillarId": "pillar/news",
+        "pillarName": "News"
+      }
+    ]
+  }
+}

@@ -1,16 +1,7 @@
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
-  reactStrictMode: true,
-  basePath: '/next-blog-2023',
-  compiler: {
-    styledComponents: true,
-  }
+	output: 'export',
+    images: { unoptimized: true }
 }
 
 module.exports = nextConfig
-
-/*
-basePath: '/next-blog-2023',
-assetPrefix: '/next-blog-2023',
-*/

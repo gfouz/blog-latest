@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .responsive-img {
+    max-width: 100%;
+    height: auto;
+  }
+  .object-fill-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .paragraph {
+    font-size: clamp(1.1rem, 1.4vw, 2.5rem);
+  }
+  .sm-title {
+    font-size: clamp(1.5rem, 1vw, 5rem);
+  }
+  .markdown p {
+    font-size: clamp(1.1rem, 1.4vw, 2.5rem);
+    max-width: 90ch;
+  }
+  .markdown h2 {
+    font-size: clamp(1.5rem, 2.2vw, 5rem);
+  }
+  .markdown a {
+    color: #d6dbfe;
+  }
+  .min-h-calc-100vh {
+    min-height: calc(100vh - 60px);
+  }
+}
+
+@layer components {
+  .post-link {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-decoration: none;
+  }
+  .blog__post-list {
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    @apply max-[670px]:block;
+  }
+  .grid-mobile-template {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas:
+      'navbar'
+      'main'
+      'aside'
+      'footer';
+    grid-template-columns: 1fr;
+  }
+  .grid-tablet-template {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 30%;
+    grid-template-areas:
+      'navbar navbar'
+      'main   aside'
+      'footer footer';
+  }
+  .grid-navbar {
+    grid-area: navbar;
+    padding: 1em;
+  }
+  .grid-main {
+    grid-area: main;
+  }
+  .grid-aside {
+    grid-area: aside;
+  }
+  .grid-footer {
+    grid-area: footer;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+  font-family:
+    Times New Roman,
+    Verdana;
+  font-size: 16px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+button {
+  cursor: pointer;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0 auto;
+  height: 100%;
+  max-width: 1300px;
+  min-height: 100vh;
+}
+
+@media (max-width: 500px) {
+  pre {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: wrap;
+    max-width: 300px;
+  }
+}
+
+pre {
+  width: 500px;
+  overflow: hidden;
+  white-space: wrap;
+  border-radius: 10px;
+}

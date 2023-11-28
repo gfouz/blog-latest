@@ -1,0 +1,36 @@
+@use '../../scss/styles.scss' as *;
+@use '../../scss/abstracts/variables' as *;
+
+.card {
+  margin-block: 0.5rem;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px;
+  background-color: #e2e3e7;
+}
+
+.card_content {
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+  background-color: #e2e3e7;
+  width: 100%;
+}
+.card_title {
+  font-size: 18px;
+  font-weight: bolder;
+}
+.card_text {
+  padding-left: 0.5em;
+  width: 100%;
+  color: #222222;
+}
+.card_image {
+  width: 80px;
+  height: 60px;
+  object-fit: fill;
+}

@@ -1,0 +1,100 @@
+@use '../../../scss/layout/explicit-blog-layout' as *;
+@use '../../../scss/components/paragraph' as *;
+
+$text-inner-space: 1em;
+.post--blackfont {
+  font-size: 2em;
+  font-weight: bolder;
+}
+.post {
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+.post_container {
+  @extend .post__container;
+  grid-gap: 5px;
+  background-color: grey;
+}
+.post_container > * {
+  background-color: white;
+  border-radius: 5px;
+}
+.post_container p {
+  @include paragraph;
+  margin-block: 0.2em;
+}
+.post_header {
+  @extend .post__header;
+  @extend .post--blackfont;
+  padding: 1em;
+  color: #f1f1f1;
+  background-color: #111111;
+}
+.post_header_title {
+  font-size: 4vw;
+}
+.post_footer {
+  @extend .post__footer;
+  @extend .post--blackfont;
+  color: #f1f1f1;
+  background-color: #111111;
+}
+.post_article {
+  @extend .post__article;
+  padding: 0.5em;
+  text-align: left;
+}
+.post_markdown h2 {
+  font-size: 1.4rem;
+  margin-block-start: 1rem;
+}
+.post_details {
+  @extend .post__details;
+  color: #444444;
+  text-align: left;
+  padding: $text-inner-space;
+}
+.post_details_image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.post_details_title {
+  color: #111111;
+}
+.post_details b {
+  color: darkblue;
+}
+.post_rule {
+  margin-block: 1rem;
+}
+.post_picture {
+  @extend .post__picture;
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+}
+
+.post_article h2 {
+  text-align: left;
+  color: #222222;
+  margin-block-start: 0.4em;
+}
+
+@media (max-width: 500px) {
+  .post_article pre {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: wrap;
+    max-width: 300px;
+  }
+}
+.post_markdown > pre {
+  width: 500px;
+  overflow: hidden;
+  white-space: wrap;
+}
