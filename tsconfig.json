@@ -36,7 +36,7 @@
       "fonts/*": ["./public/fonts/*"],
       "scss-components/*": ["./src/scss/components/*"],
       "schemas/*": ["./src/schemas/*"],
-      "utils/*": ["./src/utils/*"]
+      "logo/*": ["./src/components/logo/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".contentlayer/generated"],

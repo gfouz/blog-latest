@@ -13,22 +13,22 @@ const BreakingNews = async () => {
       {online.error && offline
         ? offline.map((item: any) => (
             <li
-              className='list-none my-3 text-[0.5rem] paragraph'
+              className='paragraph my-3 list-none text-[0.5rem]'
               key={item?.id}
             >
               <a className='no-underline' href={item?.webUrl}>
                 <p className='font-black text-slate-500'>{item?.webTitle}</p>
-                <p className='font-black text-[black] text-[12px]'>
+                <p className='text-[12px] font-black'>
                   {item?.webPublicationDate}
                 </p>
               </a>
             </li>
           ))
         : news.map((item: any) => (
-            <li className='list-none my-3 text-[0.5rem]' key={item?.id}>
+            <li className='my-3 list-none text-[0.5rem]' key={item?.id}>
               <a className='no-underline' href={item?.webUrl}>
                 <p className='font-black text-slate-500'>{item?.webTitle}</p>
-                <p className='font-black text-[black] text-[12px]'>
+                <p className='text-[12px] font-black '>
                   {item?.webPublicationDate}
                 </p>
               </a>

@@ -1,5 +1,6 @@
 import PhoneIcon from 'components/icons/PhoneIcon';
 import Location from 'components/icons/Location';
+import Github from 'components/icons/Github';
 
 interface PersonalInfoProps {
   size: string;
@@ -14,6 +15,9 @@ const PersonalInfo = ({ size, color }: PersonalInfoProps) => {
       </li>
       <li>
         <Location size={size} color={color} />
+      </li>
+      <li>
+        <Github size={size} color={color} />
       </li>
     </ul>
   );

@@ -13,7 +13,7 @@ export default function Postlink({ posts }: PostList) {
           <Link
             className={
               post?.slug === currentPath
-                ? 'post-link text-indigo-600 '
+                ? 'post-link text-yellow-300 '
                 : 'post-link text-slate-500'
             }
             href={`/post/${post?.slug}`}

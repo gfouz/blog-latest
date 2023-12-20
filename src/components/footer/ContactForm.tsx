@@ -2,8 +2,6 @@
 import * as React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import ErrorWarning from 'components/errorwarning/ErrorWarning';
-import Button from 'components/specialbutton/Button';
 import { contactService } from 'services/contactService';
 import { dataSchema, InputData } from 'schemas/form.input.schema';
 import { useContactService } from 'hooks/useContactService';
@@ -21,12 +19,10 @@ const ContactForm = () => {
   });
 
   const { data, error, fetchData } = useContactService();
-
-  console.log(`this is from custom errorXXX:  ${error}`);
+  const networkError = error ==! undefined ? error : "";
 
   const onSubmit: SubmitHandler<InputData> = async (data) => {
     const newdata = { ...data, message: defaultMessage };
-    console.log(errors);
     fetchData(newdata);
   };
   return (
@@ -51,7 +47,7 @@ const ContactForm = () => {
           <SubmitButton />
         </div>
       </fieldset>
-      {error && <p>{String(error)}</p>}
+      {error ==! undefined ? <p>{String(networkError)}</p> : null }
     </form>
   );
 };
